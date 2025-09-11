@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+
+# VSCode
+# IDE / редакторы
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# DB / logs
+*.log
+*.sqlite3
+*.db
+
+# среда
+venv/
