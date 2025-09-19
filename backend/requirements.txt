@@ -2,3 +2,4 @@ setuptools
 python-dotenv
 FastAPI
 uvicorn
+SQLAlchemy

@@ -6,7 +6,10 @@ from backend.models import note
 router = APIRouter(prefix='/notes', tags=['notes'])
 
 @router.post('/add')
-def add_note(note: note.NoteIn, conn=Depends(get_db)):
+def add_note(note_: note.NoteIn, conn=Depends(get_db)):
     # adding note to db, return response by default i gues
     cur = conn.cursor()
-    pass
+    cur.execute(''' INSERT INTO notes (note)
+                    VALUES (?)''',
+                (note_.text,))
+    conn.commit()

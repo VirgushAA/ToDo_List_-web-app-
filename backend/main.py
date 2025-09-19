@@ -1,6 +1,7 @@
 from fastapi import FastAPI, requests
 from fastapi.staticfiles import StaticFiles
 import sqlite3
+import sqlalchemy
 
 from routes import notes
 
@@ -9,22 +10,10 @@ app = FastAPI(title='ToDo List server')
 app.include_router(notes.router)
 
 
-# def create_db():
-#     con = sqlite3.connect('users.db')
-#     cur = con.cursor()
-#     cur.execute(''' CREATE TABLE IF NOT EXISTS users ( user_id INTEGER PRIMARY KEY,
-#                                                            username TEXT,
-#                                                            first_name TEXT,
-#                                                            score INTEGER DEFAULT 0 ) ''')
-#
-#     con.commit()
-#     con.close()
-
-
 def setup_db():
     conn = sqlite3.connect('notes.db')
     cur = conn.cursor()
-    cur.execute(''' CREATE TABLE IF NOT EXISTS notes ( user_id INTEGER,
+    cur.execute(''' CREATE TABLE IF NOT EXISTS notes ( 
                                                         note TEXT ) ''')
 
     conn.commit()
