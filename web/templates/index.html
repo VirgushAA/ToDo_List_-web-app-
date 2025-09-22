@@ -10,11 +10,11 @@
     </head>
     <body>
         
-        <div id="app-container">
-            <div id="main area">
+        <div class="container" id="app-container" style="display: block;">
+            <div id="main-area">
                 <h1 class="app-title">To Do List</h1>
 
-                <form action="#" method="post" id="note-form">
+                <form class="form-box" action="#" method="post" id="note-form">
                     <textarea name="note" placeholder="Enter your note here" required></textarea>
                     <button type="submit">Add Note</button>
                 </form>
@@ -22,6 +22,34 @@
             
             <div id="notes-list"></div>
 
+        </div>
+
+        <div class="container" id="sign-up-area" style="display: none;">
+            <h1 id="sign-up-title">Please Signup to continue.</h1>
+            <form class="form-auth" action="#" method="post" id="sign-up-form">
+                <input type="text" name="username" placeholder="username" required />
+                <input type="password" name="password" placeholder="password" required />
+
+                <div class="form-buttons">
+                    <button id="switch-to-login" type="button">Login</button>
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="container" id="login-area" style="display: none;">
+            <h1 id="login-title">Please Login to continue.</h1>
+            <form class="form-auth" action="#" method="post" id="login-form">
+                <input type="text" name="username" placeholder="username" required />
+                <input type="password" name="password" placeholder="password" required />
+
+                <div class="form-buttons">
+                    <button id="switch-to-signup" type="button">Sign Up</button>
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form>
         </div>
 
         <script src="../static/scripts/main.js"> </script>
